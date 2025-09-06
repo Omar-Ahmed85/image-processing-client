@@ -1,4 +1,4 @@
-import { host } from "./main";
+import { host } from "./main.js";
 
 export function showNotification(message, type) {
 	const notification = document.querySelector('.notification');
