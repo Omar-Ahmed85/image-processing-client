@@ -10,11 +10,11 @@ async function addMainImages() {
 		const img = document.createElement('img');
 
 		img.setAttribute('data-name', image);
-		img.src = `${host}/uploads/${image}`;
+		img.src = `${host}uploads/${image}`;
 		img.classList.add('image');
 		img.setAttribute(
 			'data-url',
-			`${host}/uploads/${image}`,
+			`${host}uploads/${image}`,
 		);
 
 		imagesContainer.appendChild(img);
@@ -36,10 +36,10 @@ function addNewImage(name) {
 
 	img.setAttribute('data-name', name);
 	img.classList.add('image');
-	img.src = `${host}/uploads/${name}`;
+	img.src = `${host}uploads/${name}`;
 	img.setAttribute(
 		'data-url',
-		`${host}/uploads/${name}`,
+		`${host}uploads/${name}`,
 	);
 
 	imagesContainer.appendChild(img);
@@ -59,7 +59,7 @@ imageInput.addEventListener('change', async () => {
 	formData.append('image', image);
 
 	try {
-		const response = await fetch(`${host}/api/upload`, {
+		const response = await fetch(`${host}api/upload`, {
 			method: 'POST',
 			body: formData,
 		});
@@ -108,7 +108,7 @@ resizeForm.addEventListener('submit', async (e) => {
 	}
 
 	try {
-		const URL = `${host}/api/resize?filename=${selectedImage.getAttribute('data-name')}&width=${+widthInput.value}&height=${+heightInput.value}`;
+		const URL = `${host}api/resize?filename=${selectedImage.getAttribute('data-name')}&width=${+widthInput.value}&height=${+heightInput.value}`;
 
 		const response = await fetch(URL, { method: 'POST' });
 		const data = await response.json();

@@ -24,7 +24,7 @@ export function showNotification(message, type) {
 
 export async function getImages() {
 	try {
-		const imageFiles = await fetch(`${host}/api/uploads`);
+		const imageFiles = await fetch(`${host}api/uploads`);
 		const data = await imageFiles.json();
 		return data;
 	} catch (error) {
